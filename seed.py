@@ -45,11 +45,17 @@ def load_movies():
     # Read u.movie file and insert data
     for row in open("seed_data/u.item"):
         row = row.rstrip()
-        movie_id, title, realeased_date, imdb, released_at = row.split("|")
+        row = row.split("|")
+        movie_id = row[0]
+        title = row[1]
+        realease_date = row[2]
+        video_release_date = row[3]
+        imdb_url = row[4]
 
         movie = Movie(movie_id=movie_id,
                     title=title,
-                    released_at=released_at,
+                    release_date=release_date,
+                    video_release_date=video_release_date,
                     imdb_url = imdb)
 
         # We need to add to the session or it won't ever be stored
