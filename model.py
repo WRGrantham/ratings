@@ -17,18 +17,16 @@ class User(db.Model):
 
     __tablename__ = "users"
 
-    def __repr__(self):
-
-        return f"<User user_id={self.user_id} email={self.email}>"
-
-
-
+    
     user_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    # email = db.Column(db.String(64), nullable=True)
+    email = db.Column(db.String(64), nullable=True)
     password = db.Column(db.String(64), nullable=True)
     age = db.Column(db.Integer, nullable=True)
     zipcode = db.Column(db.String(15), nullable=True)
 
+    def __repr__(self):
+
+        return f"<User user_id={self.user_id} email={self.email}>"
 
 # Put your Movie and Rating model classes here.
 

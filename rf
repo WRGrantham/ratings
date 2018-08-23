@@ -1,0 +1,10 @@
+                                         Table "public.movie"
+   Column    |            Type             |                        Modifiers                         
+-------------+-----------------------------+----------------------------------------------------------
+ movie_id    | integer                     | not null default nextval('movie_movie_id_seq'::regclass)
+ title       | character varying(64)       | 
+ released_at | timestamp without time zone | 
+ imdb_url    | character varying(64)       | 
+Indexes:
+    "movie_pkey" PRIMARY KEY, btree (movie_id)
+
